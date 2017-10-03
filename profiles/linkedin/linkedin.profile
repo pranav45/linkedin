@@ -15,7 +15,7 @@ function linkedin_form_install_configure_form_alter(&$form, $form_state) {
 }
 function linkedin_install_tasks(&$install_state) {
 $tasks = array();
-$tasks['quora_default_content'] = array();
+$tasks['linkedin_default_content'] = array();
 return $tasks;
 }
 
