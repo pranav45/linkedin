@@ -1,0 +1,9 @@
+name = Linkedin_user
+description = Linkedin_userlist
+core = 7.x
+package = Linkedin
+version = 7.x-1.0
+dependencies[] = features
+features[features_api][] = api:2
+features[user_role][] = Editor
+features[user_role][] = Manager
