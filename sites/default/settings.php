@@ -71,25 +71,6 @@ if (defined('PANTHEON_ENVIRONMENT') && PANTHEON_ENVIRONMENT === 'test') {
   $conf['error_level'] = 0;
 }
 
-/** -----------------------------------------------
- * Settings for production environment
- */
-if (defined('PANTHEON_ENVIRONMENT') && ( PANTHEON_ENVIRONMENT === 'live') ) {
-
-  // Anonymous caching - enabled.
-  $conf['cache'] = 1;
-
-  // Block caching - enabled.
-  $conf['block_cache'] = 0;
-
-  // Enable css and js aggregation.
-  $conf['preprocess_css'] = 1;
-  $conf['preprocess_js'] = 1;
-
-  // Disable error reporting.
-  $conf['error_level'] = 1;
-}
-
 
 /** -----------------------------------------------
  * Settings for development environment
