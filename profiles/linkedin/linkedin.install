@@ -69,7 +69,7 @@ function linkedin_install() {
   filter_format_save($full_html_format);
 
   // Enable some standard blocks.
-  $default_theme = variable_get('theme_default', 'bartik');
+  $default_theme = variable_get('theme_default', 'linkin');
   $admin_theme = 'seven';
   $blocks = array(
     array(
@@ -429,4 +429,17 @@ function linkedin_install() {
     ->execute();
   variable_set('admin_theme', 'seven');
   variable_set('node_admin_theme', '1');
+
+  $enable = array(
+   'theme_default' => 'linkin',
+   'admin_theme' => 'seven',
+  );
+  theme_enable($enable);
+  foreach ($enable as $var => $theme) {
+  if (!is_numeric($var)) {
+   variable_set($var, $theme);
+  }
+  }
+  // Disable the default Bartik theme
+  theme_disable(array('bartik'));
 }

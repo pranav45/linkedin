@@ -13,31 +13,32 @@ function linkedin_form_install_configure_form_alter(&$form, $form_state) {
   // Pre-populate the site name with the server name.
   $form['site_information']['site_name']['#default_value'] = $_SERVER['SERVER_NAME'];
 }
+
 function linkedin_install_tasks(&$install_state) {
-$tasks = array();
-$tasks['linkedin_default_content'] = array();
-return $tasks;
+  $tasks = array();
+  $tasks['linkedin_default_users'] = array();
+  return $tasks;
 }
 
-function linkedin_default_content() {
-//print_r(" I AM COMING HERE TO CREATE USERS");
-//drupal_set_message(" I cam here too");
-$users = array(
-    'editor' => 'pranavaeer73@gmail.com',
-    'manager' => 'pranav.mainkar896@gmail.com',
-);
-foreach ($users as $name => $email) {
-  $fields = array(
-    'name' => $name,
-    'mail' => $email,
-    'pass' => $name,
-    'status' => 1,
-    'roles' => array(
-       DRUPAL_AUTHENTICATED_RID => 'authenticated user',
-       3 => 'editor',
-       4 => 'manager',
-     ),
-  );
-  $account = user_save('', $fields);
-}
+function linkedin_default_users() {
+  $result = db_query("SELECT rid FROM {role} where name like :id",array(':id' => 'administrator'));
+    $admin_rid = $result->fetchField(0);
+    $u_roles = user_roles();
+    unset($u_roles[1]);
+    unset($u_roles[2]);
+    unset($u_roles[$admin_rid]);
+    foreach($u_roles as $key => $value) {
+      $mail = 'test-' . strtolower($value) . '@osseed.com';
+      $new_user = array(
+        'name' => $value,
+        'mail' => $mail,
+        'pass' => strtolower($value),
+        'status' => 1,
+        'init' => $mail,
+        'roles' =>array(
+          $key => $value,
+        ),
+      );
+      user_save('',$new_user);
+    }
 }

@@ -249,7 +249,7 @@ $databases = array (
   array (
     'default' => 
     array (
-      'database' => 'linktest',
+      'database' => 'linkedintest',
       'username' => 'root',
       'password' => 'password',
       'host' => 'localhost',
@@ -290,7 +290,7 @@ $update_free_access = FALSE;
  *   $drupal_hash_salt = file_get_contents('/home/example/salt.txt');
  *
  */
-$drupal_hash_salt = 'UBQaNEvlLpJkDGEVAobtya2ebQaEcuoeAvBdfSKAuBU';
+$drupal_hash_salt = 'fl5zFFaNBNlJfvz2QQvhA-zmXK8SL5DX0z-U_TqdLX8';
 
 /**
  * Base URL (optional).
