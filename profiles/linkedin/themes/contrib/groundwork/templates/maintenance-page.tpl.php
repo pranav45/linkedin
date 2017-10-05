@@ -34,9 +34,9 @@
 </head>
 
 <body class="<?php print $classes; ?>" <?php print $attributes;?>>
-  <div id="skip-link">
+  <!-- <div id="skip-link">
     <a href="#main-content" class="visually-hidden focusable"><?php print t('Skip to main content'); ?></a>
-  </div>
+  </div> -->
 
 <div id="page">
 

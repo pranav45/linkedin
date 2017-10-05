@@ -21,12 +21,11 @@ function linkedin_install_tasks(&$install_state) {
 }
 
 function linkedin_default_users() {
-  $result = db_query("SELECT rid FROM {role} where name like :id",array(':id' => 'administrator'));
-    $admin_rid = $result->fetchField(0);
     $u_roles = user_roles();
-    unset($u_roles[1]);
-    unset($u_roles[2]);
-    unset($u_roles[$admin_rid]);
+    $admin_user = variable_get('user_admin_role');
+    unset($u_roles[$admin_user]);
+    unset($u_roles[DRUPAL_ANONYMOUS_RID]);
+    unset($u_roles[DRUPAL_AUTHENTICATED_RID]);
     foreach($u_roles as $key => $value) {
       $mail = 'test-' . strtolower($value) . '@osseed.com';
       $new_user = array(

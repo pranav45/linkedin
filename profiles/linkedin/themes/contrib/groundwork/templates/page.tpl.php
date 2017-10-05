@@ -193,6 +193,5 @@
     </nav><!--/#secondary-menu -->
   <?php endif; ?>
 
-  <?php print $theme_attribution; ?>
 
 </div><!--/#page -->
