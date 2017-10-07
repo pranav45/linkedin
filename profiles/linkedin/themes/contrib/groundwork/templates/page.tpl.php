@@ -71,7 +71,7 @@
  * - $page['sidebar_first']: Items for the first sidebar.
  * - $page['sidebar_second']: Items for the second sidebar.
  * - $page['supplement']: Items for the supplement region.
- * - $page['appendix']: Items for the appendix region.
+  * - $page['appendix']: Items for the appendix region.
  * - $page['rider']: Items for the rider region.
  * - $page['footer']: Items for the footer region.
  *
@@ -182,6 +182,34 @@
   <?php if ($page['rider']): ?>
     <?php print render($page['rider']); ?>
   <?php endif; ?>
+
+  <section class="footerlink">
+    <div class="mainfooter">
+    <?php if ($page['footer1']): ?>
+      <?php print render($page['footer1']); ?>
+    <?php endif; ?>
+
+    <div class="linkmenu1">
+      <?php if ($page['footer2']): ?>
+        <?php print render($page['footer2']); ?>
+      <?php endif; ?>
+
+      <?php if ($page['footer3']): ?>
+        <?php print render($page['footer3']); ?>
+      <?php endif; ?>
+    </div>
+
+    <div class="linkmenu2">
+      <?php if ($page['footer4']): ?>
+        <?php print render($page['footer4']); ?>
+      <?php endif; ?>
+
+      <?php if ($page['footer5']): ?>
+        <?php print render($page['footer5']); ?>
+      <?php endif; ?>
+    </div>
+  </div>
+  </section>
 
   <?php if ($page['footer']): ?>
     <?php print render($page['footer']); ?>

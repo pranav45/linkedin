@@ -32,7 +32,14 @@ regions[sidebar_second] = Sidebar Second
 regions[supplement] = Supplement
 regions[appendix] = Appendix
 regions[rider] = Rider
+regions[footer1]  = Footer1
+regions[footer2]  = Footer2
+regions[footer3]  = Footer3
+regions[footer4]  = Footer4
+regions[footer5]  = Footer5
+
 regions[footer] = Footer
+
 regions[page_top] = Page top
 regions[page_bottom] = Page bottom
 regions[help] = Help

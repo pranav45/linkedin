@@ -50,6 +50,7 @@ mark {
   color: darken(@colorBase, 100%);
 }
 
+
 // buttons
 input[type="button"],
 input[type="submit"],
@@ -86,6 +87,71 @@ textarea {
   background-color: grey;
 }
 
+#edit-submit{
+  background-color: #0084bf;
+  width: 252px;
+  border: 0;
+  border-radius: 2px;
+  line-height: 24px;
+  height: 32px;
+  font-size: 17px;
+}
+
+input#edit-submit--2 {
+    height: 24px;
+    background-color: transparent;
+    color: white;
+    width: auto;
+    border: 1px solid #fff;
+    padding: 0 20px;
+    border-radius: 2px;
+}
+
+.form-item .description {
+    font-size: 0.85em;
+    display: none;
+}
+
+#main {
+  background-color: #EdF0F3;
+  border-radius: 4px;
+  width: 40%;
+  overflow: auto;
+  margin: 0 auto;
+}
+
+table#tid {
+    margin: 0 auto;
+    width: 80%;
+    border-spacing: 10px;
+    border-collapse: separate;
+    color: #c7CAC5;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+h3.pane-title {
+    padding: 10px;
+    text-align: center;
+    border-bottom: 1px solid #C7CAC5;
+}
+h1.title.page-title {
+    text-align: center;
+}
+label#customise {
+    text-align: center;
+    color: #C7CAC5;
+}
+a#policylink {
+    text-decoration: none;
+    color: #C7CAC5;;
+}
+
+section.footerlink {
+    background-color: #434649;
+    font-size: 12px;
+}
+
 #page {}
 
 .wrapper {} // Target all full-width wrappers. To use, see groundwork/resources/templates/README.txt.
@@ -103,15 +169,47 @@ textarea {
 #header {
 background-color: #283e4a;
 margin: auto;
+height: 60px;
 }
 
+form#user-register-form {
+    margin: 0 auto;
+    width: 50%;
+}
+
+input#edit-mail {
+    width: 100%;
+}
 .region {} // Target all regions/sections.
 #topbar {}
 #branding {
   padding-top: @size2;
   padding-bottom: @size2;
   margin-left: 40px;
+  display: inline-flex;
 }
+
+.form-item.form-type-textfield.form-item-name {
+  display: inline-flex;
+}
+
+.form-item.form-type-password.form-item-pass {
+  display: inline-flex;
+}
+.clearfix {
+    display: inline-flex;
+}
+
+div#edit-actions--2 {
+    display: inline-flex;
+}
+
+div#header-annex {
+    display: inline-flex;
+    float: right;
+}
+
+
 #header-annex {
   padding-top: @size2;
 }
@@ -129,7 +227,15 @@ margin: auto;
 nav#secondary-menu {}
 #theme-attribution {}
 
-#main-container {}
+#main-container {
+  margin-top: 3%;
+  margin-bottom: 3%;
+}
+
+body.html.front.not-logged-in.no-sidebars.page-linkedin-register.page-panels {
+    margin: 0 auto;
+    background-image: url(/sites/default/files/link1.jpeg);
+}
 
 #main {}
 #alink {
@@ -142,7 +248,9 @@ table#tid {
     border-spacing: 10px;
     border-collapse: separate;
 }
-
+ul.menu {
+  padding: 0px;
+}
 #footer {
   background-color: #434649;
 }
@@ -151,6 +259,40 @@ table#tid {
   a:hover {
     color: @linkColor;
   }
+}
+
+#user-login-form a {
+    color: #cdcfd2;
+}
+.linkmenu1 {
+    width: 85%;
+    overflow: auto;
+    margin: 0 auto;
+    display: flex;
+    border-top: 1px solid #C7CAC5;
+}
+
+.linkmenu2 {
+    width: 85%;
+    margin: 0 auto;
+    display: flex;
+    border-bottom: 1px solid #C7CAC5;
+}
+aside#footer4 {
+    width: 50%;
+    display: inline-block;
+}
+aside#footer5 {
+    width: 50%;
+    display: inline-block;
+}
+footer#footer2 {
+    width: 50%;
+    display: inline-block;
+}
+footer#footer3 {
+    width: 50%;
+    display: inline-block;
 }
 
 // NAVIGATION LINKS
@@ -163,6 +305,24 @@ ul.menu {
   #secondary-menu &,
   #navigation & {}
   #topbar & {}
+}
+ul li.leaf {
+list-style-image: none;
+list-style-type: none;
+}
+ul.menu {
+    display: flex;
+}
+a.active {
+    text-decoration: none;
+}
+
+h2.block-title {
+    color: #ffffff;
+}
+
+li a.active {
+  color:  #ffffff;
 }
 
 // SEARCH
