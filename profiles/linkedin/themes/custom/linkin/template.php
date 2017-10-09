@@ -15,7 +15,7 @@
  *
  * Preprocess and Process Functions SEE: http://drupal.org/node/254940#variables-processor
  * 1. Rename each function and instance of "linkin" to match
- *    your subtheme's name, e.g. if your theme name is "footheme" then the function
+ *    your subtheme's name, 'e.g.,' if your theme name is "footheme" then the function
  *    name will be "footheme_preprocess_hook". Tip - you can search/replace
  *    on "linkin". If you install this subtheme via Drush, this is automated.
  * 2. Uncomment the required function to use.
@@ -83,31 +83,28 @@ function linkin_process_block(&$variables) {
 }
 // */
 function linkedin_form_user_login_block_alter(&$form, &$form_state, $form_id) {
- $form['name']['#size'] = 20;
- //$form['name']['#title'] = t('Email');
- $form['name']['#attributes']['placeholder'] = 'Email';
- $form['name']['#title_display'] = 'invisible';
- $form['pass']['#attributes']['placeholder'] = 'Password';
- $form['pass']['#title_display'] = 'invisible';
- $form['pass']['#size'] = 20;
-
- $form['actions']['submit']['#value'] = t('Sign In');
- $markup = l(t('Forgot password?'), 'user/password');
- $markup = '<div class="clearfix">' . $markup . '</div>';
- $form['links']['#markup'] = $markup;
- $form['links']['#weight'] = 100;
-}
+    $form['name']['#size'] = 20;
+    $form['name']['#attributes']['placeholder']  = 'Email';
+    $form['name']['#title_display']  = 'invisible';
+    $form['pass']['#attributes']['placeholder'] = 'Password';
+    $form['pass']['#title_display'] = 'invisible';
+    $form['pass']['#size'] = 20;
+    $form['actions']['submit']['#value'] = t('Sign In');
+    $markup = l(t('Forgot password?'), 'user/password');
+    $markup = '<div class="clearfix">' . $markup . '</div>';
+    $form['links']['#markup'] = $markup;
+    $form['links']['#weight'] = 100;
+    }
 
 /**
-* Implements hook_form_alter().
-*/
-function linkin_form_alter(&$form, &$form_state, $form_id){
-   switch($form_id) {
-   case 'user_register_form': // the value we stole from the rendered form
+ * Implements hook_form_alter().
+ */
+function linkin_form_alter(&$form, &$form_state, $form_id) {
+  switch ($form_id) {
+    case 'user_register_form': // the value we stole from the rendered form
     $form['password'] = array(
      '#type' => 'password',
      '#title' => t('Password(6 or more characters)'),
-     //'#description' => t('Please enter your password'),
      '#size' => 30,
      '#maxlength' => 32,
      '#required' => TRUE,
@@ -120,6 +117,6 @@ function linkin_form_alter(&$form, &$form_state, $form_id){
     '#markup' => '<div id="textcustom" ><label id="customise">By clicking Join now, you agree to the LinkedIn <a href="#" id="policylink">User Agreement</a>,<a href="#" id="policylink"> Privacy Policy</a>, and <a href="#" id="policylink">Cookie Policy</a>.</label></div>',
     '#weight' => 3, // Adjust so that you can place it whereever
     );
-     break;
- }
+    break;
+  }
 }

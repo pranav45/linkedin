@@ -196,9 +196,7 @@ input#edit-mail {
 .form-item.form-type-password.form-item-pass {
   display: inline-flex;
 }
-.clearfix {
-    display: inline-flex;
-}
+
 
 div#edit-actions--2 {
     display: inline-flex;
@@ -234,13 +232,14 @@ nav#secondary-menu {}
 
 body.html.front.not-logged-in.no-sidebars.page-linkedin-register.page-panels {
     margin: 0 auto;
-    background-image: url(/sites/default/files/link1.jpeg);
+    background-image: url('/sites/default/files/link1.jpeg');
 }
 
 #main {}
 #alink {
   text-decoration: none;
   color: white;
+  display: inline-flex;
 }
 
 table#tid {
@@ -259,6 +258,10 @@ ul.menu {
   a:hover {
     color: @linkColor;
   }
+}
+
+.panel-pane.pane-page-title {
+    text-align: center;
 }
 
 #user-login-form a {
