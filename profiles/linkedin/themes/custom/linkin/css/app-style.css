@@ -268,6 +268,13 @@ body.html.front.not-logged-in.no-sidebars.page-linkedin-register.page-panels {
   //display: inline-flex;
 }
 
+div#block-menu-menu-footer-menu {
+    margin: 0 auto;
+    width: 85%;
+    padding: 2px;
+    font-size: 12px;
+}
+
 table#tid {
     margin: 0 auto;
     border-spacing: 10px;
