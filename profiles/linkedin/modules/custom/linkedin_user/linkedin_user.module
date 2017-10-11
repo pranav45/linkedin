@@ -1,8 +1,10 @@
 <?php
 /**
  * @file
- * Drupal needs this blank file.
+ * Code for the Linkedin_user feature.
  */
+
+include_once 'linkedin_user.features.inc';
  function linkedin_form_user_login_block_alter(&$form, &$form_state, $form_id) {
 
      $form['name']['#attributes']['placeholder']  = 'Email';
