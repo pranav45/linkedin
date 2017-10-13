@@ -1,0 +1,32 @@
+<?php
+/**
+ * @File
+ * This module holds functions useful for Drupal development.
+ * Please Contribute!
+ */
+
+ /**
+ * Implements hook_block_info().
+ */
+function linkedin_glossary_block_info() {
+  $block['glossary_block'] = array(
+     'info' => t('linkedin_glossary'),
+  );
+  return $block;
+}
+
+
+/**
+ * Implements hook_block_view().
+ */
+  function linkedin_glossary_block_view($delta = '') {
+    if ($delta == 'glossary_block') {
+      $letters = range('A', 'Z');
+      $items = array();
+      foreach ($letters as $char) {
+        $items[] = l($char, '/find-collegue/' . drupal_strtolower($char));
+      }
+      $block['content'] = theme('item_list', array('items' => $items));
+    }
+    return $block;
+  }
