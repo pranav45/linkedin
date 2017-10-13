@@ -5,8 +5,7 @@
  */
 
 include_once 'linkedin_user.features.inc';
- function linkedin_form_user_login_block_alter(&$form, &$form_state, $form_id) {
-
+ function linkedin_user_form_user_login_block_alter(&$form, &$form_state, $form_id) {
      $form['name']['#attributes']['placeholder']  = 'Email';
      $form['name']['#title_display']  = 'invisible';
      $form['pass']['#attributes']['placeholder'] = 'Password';
@@ -21,7 +20,7 @@ include_once 'linkedin_user.features.inc';
  /**
   * Implements hook_form_alter().
   */
- function linkin_form_alter(&$form, &$form_state, $form_id) {
+ function linkedin_user_form_alter(&$form, &$form_state, $form_id) {
  if($form_id == 'user_register_form') {
    $form['password'] = array(
      '#type' => 'password',
