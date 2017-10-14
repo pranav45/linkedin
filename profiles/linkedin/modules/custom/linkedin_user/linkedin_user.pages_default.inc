@@ -43,18 +43,7 @@ function linkedin_user_default_page_manager_pages() {
     'relationships' => array(),
     'name' => '',
     'access' => array(
-      'plugins' => array(
-        0 => array(
-          'name' => 'role',
-          'settings' => array(
-            'rids' => array(
-              0 => 1,
-            ),
-          ),
-          'context' => 'logged-in-user',
-          'not' => FALSE,
-        ),
-      ),
+      'plugins' => array(),
       'logic' => 'and',
     ),
   );
@@ -150,7 +139,20 @@ function linkedin_user_default_page_manager_pages() {
   $pane->type = 'page_title';
   $pane->subtype = 'page_title';
   $pane->shown = TRUE;
-  $pane->access = array();
+  $pane->access = array(
+    'plugins' => array(
+      0 => array(
+        'name' => 'role',
+        'settings' => array(
+          'rids' => array(
+            0 => 1,
+          ),
+        ),
+        'context' => 'logged-in-user',
+        'not' => FALSE,
+      ),
+    ),
+  );
   $pane->configuration = array(
     'markup' => 'none',
     'class' => '',
@@ -179,7 +181,20 @@ function linkedin_user_default_page_manager_pages() {
   $pane->type = 'block';
   $pane->subtype = 'formblock-user_register';
   $pane->shown = TRUE;
-  $pane->access = array();
+  $pane->access = array(
+    'plugins' => array(
+      0 => array(
+        'name' => 'role',
+        'settings' => array(
+          'rids' => array(
+            0 => 1,
+          ),
+        ),
+        'context' => 'logged-in-user',
+        'not' => FALSE,
+      ),
+    ),
+  );
   $pane->configuration = array(
     'override_title' => 1,
     'override_title_text' => 'Get started - it\'s free.',
@@ -196,6 +211,42 @@ function linkedin_user_default_page_manager_pages() {
   $pane->uuid = '95e5283f-e0b6-4090-8981-15c4169b2c8f';
   $display->content['new-95e5283f-e0b6-4090-8981-15c4169b2c8f'] = $pane;
   $display->panels['sign_up'][1] = 'new-95e5283f-e0b6-4090-8981-15c4169b2c8f';
+  $pane = new stdClass();
+  $pane->pid = 'new-f4f47c9d-b5e2-48bd-8f8b-5753e8e82fba';
+  $pane->panel = 'sign_up';
+  $pane->type = 'block';
+  $pane->subtype = 'node-recent';
+  $pane->shown = TRUE;
+  $pane->access = array(
+    'plugins' => array(
+      0 => array(
+        'name' => 'role',
+        'settings' => array(
+          'rids' => array(
+            0 => 2,
+          ),
+        ),
+        'context' => 'logged-in-user',
+        'not' => FALSE,
+      ),
+    ),
+  );
+  $pane->configuration = array(
+    'override_title' => 0,
+    'override_title_text' => '',
+    'override_title_heading' => 'h2',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 2;
+  $pane->locks = array();
+  $pane->uuid = 'f4f47c9d-b5e2-48bd-8f8b-5753e8e82fba';
+  $display->content['new-f4f47c9d-b5e2-48bd-8f8b-5753e8e82fba'] = $pane;
+  $display->panels['sign_up'][2] = 'new-f4f47c9d-b5e2-48bd-8f8b-5753e8e82fba';
   $display->hide_title = PANELS_TITLE_NONE;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
