@@ -87,15 +87,26 @@ textarea {
   background-color: grey;
 }
 
-input#edit-name--2 ,input#edit-pass {
-  padding: 0 10px;
-  width: 175px;
-  font-size: 13px;
-  height: 24px;
-  border-radius: 2px;
-  border: 1px solid #b3b6b9;
+input#edit-pass--2 {
+    padding: 0 10px;
+    width: 227px;
+    font-size: 13px;
+    height: 20px;
+    border-radius: 2px;
+    border: 1px solid #b3b6b9;
 }
 
+.form-item.form-type-password.form-item-pass {
+    display: inline;
+}
+input#edit-name--2, input#edit-pass {
+    padding: 0 10px;
+    width: 227px;
+    font-size: 13px;
+    height: 20px;
+    border-radius: 2px;
+    border: 1px solid #b3b6b9;
+}
 .front #edit-submit {
   background-color: #0084bf;
   color: #ffffff;
@@ -234,7 +245,6 @@ div#block-views-aeaaca7c2ccfeaad5652d64ebd391047 {
 }
 
 .form-item.form-type-textfield.form-item-name,
- .form-item.form-type-password.form-item-pass,
  .clearfix {
   display: inline-flex;
 }
