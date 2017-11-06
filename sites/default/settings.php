@@ -67,8 +67,10 @@ if (defined('PANTHEON_ENVIRONMENT') && PANTHEON_ENVIRONMENT === 'dev') {
  * Add local settings from settings.local.php
  */
 if (!defined('PANTHEON_ENVIRONMENT')) {
+
+  $base_url = 'http://linkedin.local'; 
   // Use /tmp for temporary files.
-  $conf['file_temporary_path'] = '/tmp';
+   $conf['file_temporary_path'] = 'sites/default/files/tmp';
   # Load in additional site configuration settings.
   $local_settings = dirname(__FILE__) . '/settings.local.php';
   if (file_exists($local_settings)) {

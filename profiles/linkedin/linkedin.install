@@ -82,16 +82,16 @@ function linkedin_install() {
       'pages' => '',
       'cache' => -1,
     ),
-    array(
-      'module' => 'search',
-      'delta' => 'form',
-      'theme' => $default_theme,
-      'status' => 1,
-      'weight' => -1,
-      'region' => 'sidebar_first',
-      'pages' => '',
-      'cache' => -1,
-    ),
+    // array(
+    //   'module' => 'search',
+    //   'delta' => 'form',
+    //   'theme' => $default_theme,
+    //   'status' => 1,
+    //   'weight' => -1,
+    //   'region' => 'sidebar_first',
+    //   'pages' => '',
+    //   'cache' => -1,
+    // ),
     array(
       'module' => 'node',
       'delta' => 'recent',
@@ -108,7 +108,7 @@ function linkedin_install() {
       'theme' => $default_theme,
       'status' => 1,
       'weight' => 0,
-      'region' => 'sidebar_first',
+      'region' => 'header_annex',
       'pages' => '',
       'cache' => -1,
     ),
@@ -122,16 +122,16 @@ function linkedin_install() {
       'pages' => '',
       'cache' => -1,
     ),
-    array(
-      'module' => 'system',
-      'delta' => 'powered-by',
-      'theme' => $default_theme,
-      'status' => 1,
-      'weight' => 10,
-      'region' => 'footer',
-      'pages' => '',
-      'cache' => -1,
-    ),
+    // array(
+    //   'module' => 'system',
+    //   'delta' => 'powered-by',
+    //   'theme' => $default_theme,
+    //   'status' => 1,
+    //   'weight' => 10,
+    //   'region' => 'footer',
+    //   'pages' => '',
+    //   'cache' => -1,
+    // ),
     array(
       'module' => 'system',
       'delta' => 'help',
@@ -230,32 +230,32 @@ function linkedin_install() {
   }
 
   // Insert default pre-defined RDF mapping into the database.
-  $rdf_mappings = array(
-    array(
-      'type' => 'node',
-      'bundle' => 'page',
-      'mapping' => array(
-        'rdftype' => array('foaf:Document'),
-      ),
-    ),
-    array(
-      'type' => 'node',
-      'bundle' => 'article',
-      'mapping' => array(
-        'field_image' => array(
-          'predicates' => array('og:image', 'rdfs:seeAlso'),
-          'type' => 'rel',
-        ),
-        'field_tags' => array(
-          'predicates' => array('dc:subject'),
-          'type' => 'rel',
-        ),
-      ),
-    ),
-  );
-  foreach ($rdf_mappings as $rdf_mapping) {
-    rdf_mapping_save($rdf_mapping);
-  }
+  // $rdf_mappings = array(
+  //   array(
+  //     'type' => 'node',
+  //     'bundle' => 'page',
+  //     'mapping' => array(
+  //       'rdftype' => array('foaf:Document'),
+  //     ),
+  //   ),
+  //   array(
+  //     'type' => 'node',
+  //     'bundle' => 'article',
+  //     'mapping' => array(
+  //       'field_image' => array(
+  //         'predicates' => array('og:image', 'rdfs:seeAlso'),
+  //         'type' => 'rel',
+  //       ),
+  //       'field_tags' => array(
+  //         'predicates' => array('dc:subject'),
+  //         'type' => 'rel',
+  //       ),
+  //     ),
+  //   ),
+  // );
+  // foreach ($rdf_mappings as $rdf_mapping) {
+  //   rdf_mapping_save($rdf_mapping);
+  // }
 
   // Default "Basic page" to not be promoted and have comments disabled.
   variable_set('node_options_page', array('status'));
@@ -274,75 +274,75 @@ function linkedin_install() {
   variable_set('user_register', USER_REGISTER_VISITORS_ADMINISTRATIVE_APPROVAL);
 
   // Create a default vocabulary named "Tags", enabled for the 'article' content type.
-  $description = st('Use tags to group articles on similar topics into categories.');
-  $vocabulary = (object) array(
-    'name' => st('Tags'),
-    'description' => $description,
-    'machine_name' => 'tags',
-  );
-  taxonomy_vocabulary_save($vocabulary);
-
-  $field = array(
-    'field_name' => 'field_' . $vocabulary->machine_name,
-    'type' => 'taxonomy_term_reference',
-    // Set cardinality to unlimited for tagging.
-    'cardinality' => FIELD_CARDINALITY_UNLIMITED,
-    'settings' => array(
-      'allowed_values' => array(
-        array(
-          'vocabulary' => $vocabulary->machine_name,
-          'parent' => 0,
-        ),
-      ),
-    ),
-  );
-  field_create_field($field);
-
-  $help = st('Enter a comma-separated list of words to describe your content.');
-  $instance = array(
-    'field_name' => 'field_' . $vocabulary->machine_name,
-    'entity_type' => 'node',
-    'label' => 'Tags',
-    'bundle' => 'article',
-    'description' => $help,
-    'widget' => array(
-      'type' => 'taxonomy_autocomplete',
-      'weight' => -4,
-    ),
-    'display' => array(
-      'default' => array(
-        'type' => 'taxonomy_term_reference_link',
-        'weight' => 10,
-      ),
-      'teaser' => array(
-        'type' => 'taxonomy_term_reference_link',
-        'weight' => 10,
-      ),
-    ),
-  );
-  field_create_instance($instance);
+  // $description = st('Use tags to group articles on similar topics into categories.');
+  // $vocabulary = (object) array(
+  //   'name' => st('Tags'),
+  //   'description' => $description,
+  //   'machine_name' => 'tags',
+  // );
+  // taxonomy_vocabulary_save($vocabulary);
+  //
+  // $field = array(
+  //   'field_name' => 'field_' . $vocabulary->machine_name,
+  //   'type' => 'taxonomy_term_reference',
+  //   // Set cardinality to unlimited for tagging.
+  //   'cardinality' => FIELD_CARDINALITY_UNLIMITED,
+  //   'settings' => array(
+  //     'allowed_values' => array(
+  //       array(
+  //         'vocabulary' => $vocabulary->machine_name,
+  //         'parent' => 0,
+  //       ),
+  //     ),
+  //   ),
+  // );
+  // field_create_field($field);
+  //
+  // $help = st('Enter a comma-separated list of words to describe your content.');
+  // $instance = array(
+  //   'field_name' => 'field_' . $vocabulary->machine_name,
+  //   'entity_type' => 'node',
+  //   'label' => 'Tags',
+  //   'bundle' => 'article',
+  //   'description' => $help,
+  //   'widget' => array(
+  //     'type' => 'taxonomy_autocomplete',
+  //     'weight' => -4,
+  //   ),
+  //   'display' => array(
+  //     'default' => array(
+  //       'type' => 'taxonomy_term_reference_link',
+  //       'weight' => 10,
+  //     ),
+  //     'teaser' => array(
+  //       'type' => 'taxonomy_term_reference_link',
+  //       'weight' => 10,
+  //     ),
+  //   ),
+  // );
+  // field_create_instance($instance);
 
 
   // Create an image field named "Image", enabled for the 'article' content type.
   // Many of the following values will be defaulted, they're included here as an illustrative examples.
   // See http://api.drupal.org/api/function/field_create_field/7
 
-  $field = array(
-    'field_name' => 'field_image',
-    'type' => 'image',
-    'cardinality' => 1,
-    'locked' => FALSE,
-    'indexes' => array('fid' => array('fid')),
-    'settings' => array(
-      'uri_scheme' => 'public',
-      'default_image' => FALSE,
-    ),
-    'storage' => array(
-      'type' => 'field_sql_storage',
-      'settings' => array(),
-    ),
-  );
-  field_create_field($field);
+  // $field = array(
+  //   'field_name' => 'field_image',
+  //   'type' => 'image',
+  //   'cardinality' => 1,
+  //   'locked' => FALSE,
+  //   'indexes' => array('fid' => array('fid')),
+  //   'settings' => array(
+  //     'uri_scheme' => 'public',
+  //     'default_image' => FALSE,
+  //   ),
+  //   'storage' => array(
+  //     'type' => 'field_sql_storage',
+  //     'settings' => array(),
+  //   ),
+  // );
+  // field_create_field($field);
 
 
   // Many of the following values will be defaulted, they're included here as an illustrative examples.
@@ -436,9 +436,9 @@ function linkedin_install() {
   );
   theme_enable($enable);
   foreach ($enable as $var => $theme) {
-  if (!is_numeric($var)) {
+  //if (!is_numeric($var)) {
    variable_set($var, $theme);
-  }
+  //}
   }
   // Disable the default Bartik theme
   theme_disable(array('bartik'));

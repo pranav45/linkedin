@@ -1,25 +1,23 @@
 <?php
+include_once 'linkedin_user.features.inc';
 /**
  * @file
  * Code for the Linkedin_user feature.
  */
-
-include_once 'linkedin_user.features.inc';
-function linkedin_user_form_user_login_block_alter(&$form, &$form_state, $form_id) {
-  $form['name']['#attributes']['placeholder']  = 'Email';
-  $form['name']['#title_display']  = 'invisible';
-  $form['pass']['#attributes']['placeholder'] = 'Password';
-  $form['pass']['#title_display'] = 'invisible';
-  $form['actions']['submit']['#value'] = t('Sign In');
-  $markup = l(t('Forgot password?'), 'user/password');
-  $markup = '<div class="clearfix">' . $markup . '</div>';
-  $form['links']['#markup'] = $markup;
-  $form['links']['#weight'] = 100;
+  function linkedin_user_form_user_login_block_alter(&$form, &$form_state, $form_id) {
+    $form['name']['#attributes']['placeholder']  = 'Email or phone number';
+    $form['name']['#title_display']  = 'invisible';
+    $form['pass']['#attributes']['placeholder'] = 'Password';
+    $form['pass']['#title_display'] = 'invisible';
+    $form['actions']['submit']['#value'] = t('Sign In');
+    $markup = l(t('Forgot password?'), 'user/password');
+    $markup = '<div class="clearfix">' . $markup . '</div>';
+    $form['links']['#markup'] = $markup;
+    $form['links']['#weight'] = 100;
   }
-
- /**
-  * Implements hook_form_alter().
-  */
+/**
+ * Implements hook_form_alter().
+ */
   function linkedin_user_form_alter(&$form, &$form_state, $form_id)  {
     if ($form_id == 'user_register_form') {
         $form['account']['pass']['#type'] = 'password';

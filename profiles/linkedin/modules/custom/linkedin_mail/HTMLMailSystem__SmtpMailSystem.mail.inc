@@ -1,4 +1,8 @@
 <?php
+/**
+ * @file
+ * Code for the HTML_SMTP_mail configuration .
+ */
 class HTMLMailSystem__SmtpMailSystem implements MailSystemInterface {
   protected $formatClass;
   protected $mailClass;

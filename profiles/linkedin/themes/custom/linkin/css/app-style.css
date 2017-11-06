@@ -1,5 +1,4 @@
 // For styles applied to all media regardless of width, which can be overriden for other media.
-
 body {
 
 }
@@ -87,25 +86,25 @@ textarea {
   background-color: grey;
 }
 
-input#edit-pass--2 {
-    padding: 0 10px;
-    width: 227px;
-    font-size: 13px;
-    height: 20px;
-    border-radius: 2px;
-    border: 1px solid #b3b6b9;
+input#edit-name--2,input#edit-pass--2 {
+  padding: 0 10px;
+  width: 215px;
+  font-size: 13px;
+  height: 25px;
+  border-radius: 2px;
+  border: 1px solid #b3b6b9;
 }
 
 .form-item.form-type-password.form-item-pass {
-    display: inline;
+  display: inline;
 }
-input#edit-name--2, input#edit-pass {
-    padding: 0 10px;
-    width: 227px;
-    font-size: 13px;
-    height: 20px;
-    border-radius: 2px;
-    border: 1px solid #b3b6b9;
+input#edit-pass {
+  padding: 0 10px;
+  width: 227px;
+  font-size: 13px;
+  height: 20px;
+  border-radius: 2px;
+  border: 1px solid #b3b6b9;
 }
 .front #edit-submit {
   background-color: #0084bf;
@@ -318,7 +317,9 @@ ul.menu {
 }
 
 #user-login-form a {
-    color: #cdcfd2;
+  color: #cdcfd2;
+  text-indent: 12px;
+  text-decoration: none;
 }
 
 span.form-required {
@@ -459,3 +460,4 @@ li a.active {
 #block-system-main {
   background: transparent;
 }
+--debug: No such file or directory
