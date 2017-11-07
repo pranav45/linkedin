@@ -24,4 +24,6 @@ dependencies[] = field_ui
 dependencies[] = file
 dependencies[] = rdf
 dependencies[] = features
+// Custom
 dependencies[] = linkedin_user
+dependencies[] = email_features

@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Email features feature.
+ */
+
+include_once 'email_features.features.inc';
