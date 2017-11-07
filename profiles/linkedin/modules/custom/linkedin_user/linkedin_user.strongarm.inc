@@ -49,7 +49,8 @@ function linkedin_user_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'form_placeholder_include';
-  $strongarm->value = '#edit-field-first-name-value #edit-field-last-name-value';
+  $strongarm->value = '#edit-field-first-name-value
+#edit-field-last-name-value';
   $export['form_placeholder_include'] = $strongarm;
 
   $strongarm = new stdClass();

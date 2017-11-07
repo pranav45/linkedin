@@ -52,7 +52,6 @@ features[menu_links][] = menu-browse-linkedin_job-:<front>
 features[menu_links][] = menu-browse-linkedin_learning-:<front>
 features[menu_links][] = menu-browse-linkedin_mobile-:<front>
 features[menu_links][] = menu-browse-linkedin_profinder-:<front>
-features[menu_links][] = menu-business-solutions_learning:<front>
 features[menu_links][] = menu-business-solutions_marketing-:<front>
 features[menu_links][] = menu-business-solutions_sales-:<front>
 features[menu_links][] = menu-business-solutions_talent-:<front>

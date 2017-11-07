@@ -46,7 +46,7 @@ function linkedin_user_menu_default_menu_custom() {
   t('Business Solutions');
   t('Directories');
   t('Footer-menu');
-  t('General');
+  t('General ');
   t('List Of links related to menu');
   t('List of links related to the Business');
 

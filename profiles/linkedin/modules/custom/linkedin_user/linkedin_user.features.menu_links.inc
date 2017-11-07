@@ -135,31 +135,6 @@ function linkedin_user_menu_default_menu_links() {
     'weight' => 0,
     'customized' => 1,
   );
-  // Exported menu link: menu-business-solutions_learning:<front>.
-  $menu_links['menu-business-solutions_learning:<front>'] = array(
-    'menu_name' => 'menu-business-solutions',
-    'link_path' => '<front>',
-    'router_path' => '',
-    'link_title' => 'Learning',
-    'options' => array(
-      'attributes' => array(
-        'title' => '',
-      ),
-      'menu_icon' => array(
-        'enable' => 0,
-        'path' => 'profiles/linkedin/modules/contributed/menu_icons/images/default_icon.png',
-        'image_style' => 'menu_icon',
-      ),
-      'identifier' => 'menu-business-solutions_learning:<front>',
-    ),
-    'module' => 'menu',
-    'hidden' => 0,
-    'external' => 1,
-    'has_children' => 0,
-    'expanded' => 0,
-    'weight' => 0,
-    'customized' => 1,
-  );
   // Exported menu link: menu-business-solutions_marketing-:<front>.
   $menu_links['menu-business-solutions_marketing-:<front>'] = array(
     'menu_name' => 'menu-business-solutions',
@@ -497,6 +472,7 @@ function linkedin_user_menu_default_menu_links() {
         'class' => array(
           0 => 'menu_icon',
           1 => 'menu-456',
+          2 => 'menu-277',
         ),
       ),
       'menu_icon' => array(
@@ -877,11 +853,10 @@ function linkedin_user_menu_default_menu_links() {
   t('Developers');
   t('Guest Controls');
   t('Help center |');
-  t('Influencers |');
+  t('Influencers |	');
   t('Job |');
   t('Jobs |');
   t('Language');
-  t('Learning');
   t('Learning |');
   t('Marketing |');
   t('Members |');
