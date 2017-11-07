@@ -877,7 +877,7 @@ function linkedin_user_menu_default_menu_links() {
   t('Developers');
   t('Guest Controls');
   t('Help center |');
-  t('Influencers |	');
+  t('Influencers |');
   t('Job |');
   t('Jobs |');
   t('Language');
