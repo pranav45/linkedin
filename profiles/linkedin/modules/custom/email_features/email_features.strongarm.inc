@@ -22,8 +22,8 @@ function email_features_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'mail_system';
   $strongarm->value = array(
-    'default-system' => 'HTMLMailSystem__SmtpMailSystem',
-    'htmlmail' => 'HTMLMailSystem__SmtpMailSystem',
+    'default-system' => 'DefaultMailSystem',
+    'htmlmail' => 'HTMLMailSystem',
   );
   $export['mail_system'] = $strongarm;
 
@@ -45,7 +45,7 @@ function email_features_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'smtp_on';
-  $strongarm->value = '1';
+  $strongarm->value = 0;
   $export['smtp_on'] = $strongarm;
 
   $strongarm = new stdClass();
