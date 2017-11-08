@@ -149,8 +149,16 @@ function linkedin_user_default_search_api_server() {
             "type" : "uri",
             "boost" : "1.0"
           },
-          "field_first_name" : { "table" : "search_api_db_member_directory_text" },
-          "field_last_name" : { "table" : "search_api_db_member_directory_text" }
+          "field_first_name" : {
+            "table" : "search_api_db_member_directory_text",
+            "type" : "text",
+            "boost" : "1.0"
+          },
+          "field_last_name" : {
+            "table" : "search_api_db_member_directory_text",
+            "type" : "text",
+            "boost" : "1.0"
+          }
         }
       }
     },
